@@ -1,0 +1,674 @@
+{
+	"info": {
+		"_postman_id": "a20f944f-6293-4e86-85e0-56b124888311",
+		"name": "sql",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "create new system administrator",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://hala-task-sql.herokuapp.com/auth/register",
+							"protocol": "https",
+							"host": [
+								"hala-task-sql",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Log in",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://hala-task-sql.herokuapp.com/auth/login",
+							"protocol": "https",
+							"host": [
+								"hala-task-sql",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "position",
+			"item": [
+				{
+					"name": "create position",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjQzMTI4NzA4LCJleHAiOjE2NDMxMzIzMDh9.r6_IAI1H2ZRJuGkq2WURo3TQmqou5JeKLXs-IHA41no",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"position\": \"replacer\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://hala-task-sql.herokuapp.com/positions",
+							"protocol": "https",
+							"host": [
+								"hala-task-sql",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"positions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get positions",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjQzMTU3Njc3LCJleHAiOjE2NDMxNjEyNzd9.39qgUThoXEQTA_5Fmqi9i8lK9FfgSpJF9Zkmj6XDwC4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://hala-task-sql.herokuapp.com/positions",
+							"protocol": "https",
+							"host": [
+								"hala-task-sql",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"positions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update position",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjQzMTI4NzA4LCJleHAiOjE2NDMxMzIzMDh9.r6_IAI1H2ZRJuGkq2WURo3TQmqou5JeKLXs-IHA41no",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 7,\r\n    \"position\": \"captien\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://hala-task-sql.herokuapp.com/positions",
+							"protocol": "https",
+							"host": [
+								"hala-task-sql",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"positions"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "player",
+			"item": [
+				{
+					"name": "create player",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjQzMTI4NzA4LCJleHAiOjE2NDMxMzIzMDh9.r6_IAI1H2ZRJuGkq2WURo3TQmqou5JeKLXs-IHA41no",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"omar al-soma\",\r\n    \"positionId\": 4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://hala-task-sql.herokuapp.com/players",
+							"protocol": "https",
+							"host": [
+								"hala-task-sql",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"players"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get players",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjQzMTI4NzA4LCJleHAiOjE2NDMxMzIzMDh9.r6_IAI1H2ZRJuGkq2WURo3TQmqou5JeKLXs-IHA41no",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://hala-task-sql.herokuapp.com/players",
+							"protocol": "https",
+							"host": [
+								"hala-task-sql",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"players"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update player",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjQzMTI4NzA4LCJleHAiOjE2NDMxMzIzMDh9.r6_IAI1H2ZRJuGkq2WURo3TQmqou5JeKLXs-IHA41no",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": 4,\r\n        \"name\": \"Ferran Jutglà\",\r\n        \"positionId\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://hala-task-sql.herokuapp.com/players",
+							"protocol": "https",
+							"host": [
+								"hala-task-sql",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"players"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "team",
+			"item": [
+				{
+					"name": "create team",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjQzMTI4NzA4LCJleHAiOjE2NDMxMzIzMDh9.r6_IAI1H2ZRJuGkq2WURo3TQmqou5JeKLXs-IHA41no",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"syrain national team\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://hala-task-sql.herokuapp.com/teams",
+							"protocol": "https",
+							"host": [
+								"hala-task-sql",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"teams"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get team",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjQzMTI4NzA4LCJleHAiOjE2NDMxMzIzMDh9.r6_IAI1H2ZRJuGkq2WURo3TQmqou5JeKLXs-IHA41no",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://hala-task-sql.herokuapp.com/teams",
+							"protocol": "https",
+							"host": [
+								"hala-task-sql",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"teams"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create team players",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjQzMjIxMjc2LCJleHAiOjE2NDMyMjQ4NzZ9.BXB08p5v20C-T5iyAHBsRvyGBjf8AQNva8-t3TtH9eA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"playerId\": 11 ,\r\n    \"teamId\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://hala-task-sql.herokuapp.com/teams/players",
+							"protocol": "https",
+							"host": [
+								"hala-task-sql",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"teams",
+								"players"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get team players",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjQzMTI4NzA4LCJleHAiOjE2NDMxMzIzMDh9.r6_IAI1H2ZRJuGkq2WURo3TQmqou5JeKLXs-IHA41no",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://hala-task-sql.herokuapp.com/teams/1",
+							"protocol": "https",
+							"host": [
+								"hala-task-sql",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"teams",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "match",
+			"item": [
+				{
+					"name": "create match",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjQzMTI4NzA4LCJleHAiOjE2NDMxMzIzMDh9.r6_IAI1H2ZRJuGkq2WURo3TQmqou5JeKLXs-IHA41no",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"teamOneId\": 3 ,\r\n    \"teamTwoId\": 4,\r\n    \"date\": \"2021-04-18T18:00:22.000Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://hala-task-sql.herokuapp.com/matches",
+							"protocol": "https",
+							"host": [
+								"hala-task-sql",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"matches"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get matches",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjQzMTYwODc1LCJleHAiOjE2NDMxNjQ0NzV9.jTYvVAgeRbVFqGPR7vJd3wm6rBfOX6fItGJx2j4k24U",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://hala-task-sql.herokuapp.com/matches",
+							"protocol": "https",
+							"host": [
+								"hala-task-sql",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"matches"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update match",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjQzMTI4NzA4LCJleHAiOjE2NDMxMzIzMDh9.r6_IAI1H2ZRJuGkq2WURo3TQmqou5JeKLXs-IHA41no",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"teamOneId\": 1 ,\r\n    \"teamTwoId\": 3,\r\n    \"date\": \"2022-04-14T18:00:22.000Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://hala-task-sql.herokuapp.com/matches",
+							"protocol": "https",
+							"host": [
+								"hala-task-sql",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"matches"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "player's position in match",
+			"item": [
+				{
+					"name": "create a position for player in match",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjQzMTI4NzA4LCJleHAiOjE2NDMxMzIzMDh9.r6_IAI1H2ZRJuGkq2WURo3TQmqou5JeKLXs-IHA41no",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"playerId\": 6,\r\n    \"matchId\": 1,\r\n    \"positionId\": 4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://hala-task-sql.herokuapp.com/matches/positions",
+							"protocol": "https",
+							"host": [
+								"hala-task-sql",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"matches",
+								"positions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get players's position in a match",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjQzMTI4NzA4LCJleHAiOjE2NDMxMzIzMDh9.r6_IAI1H2ZRJuGkq2WURo3TQmqou5JeKLXs-IHA41no",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://hala-task-sql.herokuapp.com/matches/1",
+							"protocol": "https",
+							"host": [
+								"hala-task-sql",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"matches",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update player's postion in a match",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjQzMTI4NzA4LCJleHAiOjE2NDMxMzIzMDh9.r6_IAI1H2ZRJuGkq2WURo3TQmqou5JeKLXs-IHA41no",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n    \"id\": 1,\r\n    \"playerId\": 3,\r\n    \"matchId\": 1,\r\n    \"positionId\": 4\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://hala-task-sql.herokuapp.com/matches/positions",
+							"protocol": "https",
+							"host": [
+								"hala-task-sql",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"matches",
+								"positions"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
